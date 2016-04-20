@@ -5,7 +5,7 @@ module.exports = function(){
 			data: '=',
 			options: '='
 		},
-		templateUrl: 'core/views/graph/graph.html',
+		template: require('core/views/graph/graph.html'),
 		link: function(scope, attrs, ctrl){
 
 		}

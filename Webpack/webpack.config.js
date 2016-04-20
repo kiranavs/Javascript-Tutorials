@@ -1,9 +1,11 @@
 'use strict';
-var APP = __dirname + '/app';
+
 var webpack = require('webpack');
 var path = require('path');
+var APP = path.join(__dirname, '/app');
+
 module.exports = {
-	context: path.join(__dirname, 'app'),
+	context: APP,
 	entry: {
 		app: ['webpack/hot/dev-server', './core/bootstrap.js']
 	},
@@ -36,8 +38,12 @@ module.exports = {
 		  },
 		  { 
 		  	test: /\.(jpe?g|png|gif|svg)$/i, 
-		  	loader: 'url?limit=10000!img?progressive=true' 
-		  }
+		  	loader: 'url-loader?mimetype=image/png' 
+		  },
+		  {
+	        test: /\.html$/,
+	        loader: "html-loader"
+	      }
 		]
   	},
   	resolve: {

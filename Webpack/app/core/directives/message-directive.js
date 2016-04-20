@@ -1,7 +1,7 @@
 module.exports = function(){
 	return {
 		restrict: 'AE',
-		templateUrl: 'core/views/message/message.html',
+		template: require('core/views/message/message.html'),
 		scope: {
 			message: '='
 		},
