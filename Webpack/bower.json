@@ -1,0 +1,23 @@
+{
+  "name": "Webpack",
+  "description": "My First WEbpack",
+  "main": "index.html",
+  "authors": [
+    "Kirana"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/core/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularD3": "^0.1.1",
+    "angular-nvd3": "^1.0.6",
+    "angular-ui-router": "^0.2.18"
+  }
+}
