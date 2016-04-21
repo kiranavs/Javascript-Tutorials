@@ -44,7 +44,12 @@ gulp.task("webpack:build", function(callback) {
 
 // modify some webpack config options
 var myDevConfig = Object.create(webpackConfig);
+//remove this config from  the default webapp config for livereload, we need to pass hot:true and inline: true 
+//in WebpackDevServer config
 myDevConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
+
+//dev compiler actually no need run, when we run webpack-dev-server, 
+//it will create bundle.js automatically inside the server
 myDevConfig.devtool = "sourcemap";
 myDevConfig.debug = true;
 
