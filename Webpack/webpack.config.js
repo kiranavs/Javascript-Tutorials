@@ -1,26 +1,36 @@
 'use strict';
 
 var webpack = require('webpack');
+//Do use path and join the base directory in the project for the live reload
 var path = require('path');
 var APP = path.join(__dirname, '/app');
 
 module.exports = {
 	context: APP,
+	//webapp server setup, install the webapp-dev-server plugin HotModuleReplacementPlugin() and add it in the plugins
 	entry: {
 		app: ['webpack/hot/dev-server', './core/bootstrap.js']
 	},
 	plugins: [  
-	    new webpack.HotModuleReplacementPlugin(),
+	    new webpack.HotModuleReplacementPlugin()
 	],
+
+	//output folder path for the bundle.js which will be included in the index.html
 	output: {
 		path: APP,
 		filename: 'bundle.js'
 	},
+
+	//configuration to enable source map
 	debug: true,
 	devtool: 'source-map',
 	devServer: {
-        contentBase: APP+"/",
+        contentBase: APP+"/", //path for the code base to show in source map
     },
+
+    //loaders are required to load the files based on file type
+    //We need to load the html,css/scss and js files using require('filepath') for the live reload
+    //install the plugin for loaders then add the loaders in config file.
 	module: {
 	    loaders: [
 	      {
@@ -46,6 +56,9 @@ module.exports = {
 	      }
 		]
   	},
+
+  	//To load the external plugin,we need to add the application base directory name and alias with the path.
+  	//we can call alias name using require('aliasName'), called in vendor.js
   	resolve: {
 	  root: path.resolve(APP),
 	  alias: {

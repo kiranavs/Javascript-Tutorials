@@ -1,3 +1,3 @@
-module.exports = function(MessageService){
-	this.message = MessageService.getMessage();
+module.exports = function(MessageService, NAME){
+	this.message = MessageService.getMessage() + " " + NAME;
 }
