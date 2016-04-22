@@ -1,9 +1,28 @@
 'use strict';
 
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 //Do use path and join the base directory in the project for the live reload
 var path = require('path');
 var APP = path.join(__dirname, '/app');
+var minimize = process.argv.indexOf('--minimize') !== -1;
+var plugins = [];
+var output = { path: APP };
+
+if (minimize) 
+{
+	output.filename = 'bundle.min.js'
+	plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+else
+{
+	output.filename = 'bundle.js'
+}
+plugins.push(new webpack.HotModuleReplacementPlugin());
+plugins.push(new HtmlWebpackPlugin({
+	inject: 'body',
+	template: 'index.html'
+}));
 
 module.exports = {
 	context: APP,
@@ -11,15 +30,10 @@ module.exports = {
 	entry: {
 		app: ['webpack/hot/dev-server', './core/bootstrap.js']
 	},
-	plugins: [  
-	    new webpack.HotModuleReplacementPlugin()
-	],
+	plugins: plugins,
 
 	//output folder path for the bundle.js which will be included in the index.html
-	output: {
-		path: APP,
-		filename: 'bundle.js'
-	},
+	output: output,
 
 	//configuration to enable source map
 	debug: true,
