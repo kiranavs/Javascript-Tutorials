@@ -21,7 +21,8 @@ else
 plugins.push(new webpack.HotModuleReplacementPlugin());
 plugins.push(new HtmlWebpackPlugin({
 	inject: 'body',
-	template: 'index.html'
+	template: 'index.template.html',
+	filename: 'index.html'
 }));
 
 module.exports = {
