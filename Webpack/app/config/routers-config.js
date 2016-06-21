@@ -17,4 +17,10 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
 		controller: 'GraphCtrl',
 		controllerAs: 'graphCtrl'
 	})
+	.state('home.datamap',{
+		url: '/datamap',
+		template: require('core/views/datamap/datamap-example.html'),
+		controller: 'DatamapCtrl',
+		controllerAs: 'datamapCtrl'
+	})
 }

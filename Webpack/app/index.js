@@ -1,5 +1,5 @@
 module.exports = angular
-.module('app', ['nvd3','ui.router'])
+.module('app', ['nvd3','ui.router','datamaps'])
 .config(['$stateProvider','$urlRouterProvider', require('config/routers-config')]);
 
 require("./config/url-config")();

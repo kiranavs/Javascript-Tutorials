@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-nvd3": "^1.0.6"
+    "angular-nvd3": "^1.0.6",
+    "angular-datamaps": "^0.1.2"
   }
 }

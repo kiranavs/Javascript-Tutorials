@@ -3,4 +3,5 @@ module.exports = function(){
 	.module('app')
 	.controller('MessageCtrl', ['MessageService', require('../core/controllers/message-controller')])
 	.controller('GraphCtrl', ['GraphService', require('../core/controllers/graph-controller')])
+	.controller('DatamapCtrl', ['DatamapService', require('../core/controllers/datamap-controller')])
 }

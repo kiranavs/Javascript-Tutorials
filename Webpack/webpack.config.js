@@ -77,7 +77,8 @@ module.exports = {
   	resolve: {
 	  root: path.resolve(APP),
 	  alias: {
-	    d3: 'core/components/d3/d3.js'
+	    'd3': 'core/components/d3/d3.js',
+	    'datamaps.all': 'core/components/datamaps/dist/datamaps.all.js'
 	  },
 	  extensions: ['', '.js', '.jsx']
 	}
