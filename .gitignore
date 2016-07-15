@@ -2,3 +2,6 @@
 /Webpack/node_modules
 /npm-debug.log
 /.gitignore
+/NodeJs Tutorial/client/node_modules
+/NodeJs Tutorial/server/node_modules
+/NodeJs Tutorial/.idea

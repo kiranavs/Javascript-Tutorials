@@ -1,0 +1,11 @@
+{
+  "database": "nodejs",
+  "username": "root",
+  "password": "root",
+  "host": "localhost",
+  "dialect": "mysql",
+  "poolmax": 5,
+  "poolmin": 0,
+  "idle": 10000,
+  "force": false
+}
